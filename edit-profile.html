@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<div class='text-center'>
+    <img class="signup-img" width='100px' src="{% static "images/admin.png" %}" alt="student">
+    <img class="signup-img" width='100px' src="{% static "images/organisation.png" %}" alt="staff">
+    <img class="signup-img" width='100px' src="{% static "images/student.png" %}" alt="admin">
+</div>
+<form class="row g-3 signup-container my-3 px-5 py-3 mx-auto">
+    
+    <div class="col-md-8">
+      <label for="inputEmail4" class="form-label text-sm font-medium leading-6 text-gray-900">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    
+    <div class="col-md-6">
+        <label for="username" class="form-label text-sm font-medium leading-6 text-gray-900">Username</label>
+            {% comment %} <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">user/</span> {% endcomment %}
+            <input type="text" name="username" id="username" autocomplete="username" class="form-control" placeholder="janesmith">
+    </div>
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label text-sm font-medium leading-6 text-gray-900">Password</label>
+        <input type="password" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label text-sm font-medium leading-6 text-gray-900">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label text-sm font-medium leading-6 text-gray-900">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label text-sm font-medium leading-6 text-gray-900">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label text-sm font-medium leading-6 text-gray-900">State</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label text-sm font-medium leading-6 text-gray-900">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label text-sm font-medium leading-6 text-gray-900" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary text-sm font-medium leading-6 text-gray-900">Sign in</button>
+    </div>
+  </form>
+  
+{% endblock %}
